@@ -1,0 +1,2 @@
+#event_simpleName = ProcessRollip2 OR #event_simpleName = ProcessBlocked (CommandLine = "C:\\Windows\\Temp\\*.exe")
+| groupBy([ComputerName, FileName, CommandLine, SHA256HashData])
