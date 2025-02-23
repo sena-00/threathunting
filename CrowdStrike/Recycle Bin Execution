@@ -1,0 +1,2 @@
+$falcon/investigate:exec_running_from_recycle_bin()
+| groupBy([@timestamp, ComputerName, LocalIP, OriginalFilename, Filepath])
