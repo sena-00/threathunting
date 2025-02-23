@@ -1,0 +1,15 @@
+// https://www.cyfirma.com/research/noneuclid-rat/
+// NonEuclid Remote Access Trojan (RAT) is a powerful malware designed for unauthorized remote access and control of computers. Developed using C# for the .NET Framework 4.8, it employs advanced evasion techniques such as antivirus bypass, privilege escalation, anti-detection, and ransomware encryption. Its stealth, dynamic DLL loading, anti-VM checks, and AES encryption have made it popular among cybercriminals.
+
+let WhitelistExe = dynamic(["Iamclean.exe"]);
+let MaliciousLPExe =
+DeviceFileEvents
+| where isnotempty(SHA1)
+| where ActionType == @"FileCreated" and FileName endswith ".exe"
+| invoke FileProfile("SHA1",1000)
+| where GlobalPrevalence < 50
+| distinct FileName;
+DeviceEvents
+| where ActionType == @"ScheduledTaskCreated"
+| where AdditionalFields has_any(MaliciousLPExe)
+| where not (AdditionalFields has_any(WhitelistExe))
