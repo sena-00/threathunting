@@ -1,5 +1,5 @@
 # Threat Hunting Queries
-Lucas' official Threat Hunting repo
+Lucas' official Threat Hunting repo  
 This covers:
 - Powershell
 - CrowdStrike
