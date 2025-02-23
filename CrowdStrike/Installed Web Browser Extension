@@ -1,0 +1,4 @@
+#event_simpleName="InstalledBrowserExtension" BrowserExtensionId!="no-extension-available"
+| groupBy([@timestamp, ComputerName, BrowserName, BrowserExtensionName, BrowserExtensionId])
+| rename(field="BrowserName", as="Browser")
+// 3 = Chrome, 4 = Edge, 5 = Firefox, 6 = Safari, 7 = IE, 8 = Opera //
