@@ -1,0 +1,2 @@
+#event_simpleName=DcUsbDeviceDisconnected
+| groupBy([@timestamp, ComputerName, DeviceProduct, DeviceManufacturer])
