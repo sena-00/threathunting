@@ -1,0 +1,2 @@
+# threathunting
+Advanced Huing Queries
