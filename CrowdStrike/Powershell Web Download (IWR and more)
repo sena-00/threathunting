@@ -1,0 +1,2 @@
+#event_simpleName=ProcessRollup2 OR #event_simpleName=ProcessBlocked FileName="powershell.exe" (CommandLine=*Invoke-WebRequest* OR CommandLine=*iwr* OR CommandLine=*Net.WebClient* OR CommandLine=*Start-BitsTransfer*)
+| groupBy ([ComputerName, UserName, FileName, CommandLine])
