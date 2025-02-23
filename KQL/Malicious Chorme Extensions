@@ -1,0 +1,28 @@
+// https://www.extensiontotal.com/cyberhaven-incident-live
+// 11:08 UTC January 1st, 2025 - Total 36 malicious extensions
+
+let MaliciousChromeExtensionID = dynamic(["emedckhdnioeieppmeojgegjfkhdlaeo","eaijffijbobmnonfhilihbejadplhddo","lbneaaedflankmgmfbmaplggbmjjmbae",
+"hmiaoahjllhfgebflooeeefeiafpkfde","pdkmmfdfggfpibdjbbghggcllhhainjo","jiofmdifioeejeilfkpegipdjiopiekl",
+"acmfnomgphggonodopogfbmkneepfgnh","hihblcmlaaademjlakdpicchbjnnnkbo","ndlbedplllcgconngcnfmkadhokfaaln",
+"bibjgkidgpfbblifamdlkdlhgihmfohh","pkgciiiancapdlpcbppfkmeaieppikkk","epdjhgbipjpbbhoccdeipghoihibnfja",
+"bbdnohkpnbkdkmnkddobeafboooinpla","befflofjcniongenjmbkgkoljhgliihe","cedgndijpacnfbdggppddacngjfdkaca",
+"nnpnnpemnckcfdebeekibpiijlicmpom","dpggmcodlahmljkhlmpgpdcffdaoccni","cplhlgabfijoiabgkigdafklbhhdkahj",
+"egmennebgadmncfjafcemlecimkepcle","mnhffkhmpnefgklngfmlndmkimimbphc","oaikpkmjciadfpddlpjjdapglcihgdle",
+"fbmlcbhdmilaggedifpihjgkkmdgeljh","kkodiihpgodmdankclfibbiphjkfdenh","oeiomhmbaapihbilkfkhmlajkeegnjhe",
+"igbodamhgjohafcenbcljfegbipdfjpk","bgejafhieobnfpjlpcjjggoboebonfcg","llimhhconnjiflfimocjggfjdlmlhblm",
+"hodiladlefdpcbemnbbcpclbmknkiaem","epikoohpebngmakjinphfiagogjcnddm","pajkjnmeojmbapicmbpliphjmcekeaac",
+"ogbhbgkiojdollpjbhbamafmedkeockb","eanofdhdfbcalhflpbdipkjjkoimeeod","ekpkdmohpdnebfedjjfklhpefgpgaaji",
+"miglaibdlgminlepgeifekifakochlka","mbindhfolmpijhodmgkloeeppmkhpmhc","didhgeamncokiaegffipckhhcpnmlcbl",
+"bibjgkidgpfbblifamdlkdlhgihmfohh","pkgciiiancapdlpcbppfkmeaieppikkk","epdjhgbipjpbbhoccdeipghoihibnfja",
+"bbdnohkpnbkdkmnkddobeafboooinpla","befflofjcniongenjmbkgkoljhgliihe","cedgndijpacnfbdggppddacngjfdkaca",
+"nnpnnpemnckcfdebeekibpiijlicmpom","dpggmcodlahmljkhlmpgpdcffdaoccni","cplhlgabfijoiabgkigdafklbhhdkahj",
+"egmennebgadmncfjafcemlecimkepcle","mnhffkhmpnefgklngfmlndmkimimbphc","oaikpkmjciadfpddlpjjdapglcihgdle",
+"fbmlcbhdmilaggedifpihjgkkmdgeljh","kkodiihpgodmdankclfibbiphjkfdenh","oeiomhmbaapihbilkfkhmlajkeegnjhe",
+"igbodamhgjohafcenbcljfegbipdfjpk","bgejafhieobnfpjlpcjjggoboebonfcg","llimhhconnjiflfimocjggfjdlmlhblm",
+"hodiladlefdpcbemnbbcpclbmknkiaem","epikoohpebngmakjinphfiagogjcnddm","pajkjnmeojmbapicmbpliphjmcekeaac",
+"ogbhbgkiojdollpjbhbamafmedkeockb","eanofdhdfbcalhflpbdipkjjkoimeeod","ekpkdmohpdnebfedjjfklhpefgpgaaji",
+"miglaibdlgminlepgeifekifakochlka","mbindhfolmpijhodmgkloeeppmkhpmhc"]);
+DeviceFileEvents
+| where ActionType == "FileCreated" and FileName endswith ".crx"
+| where FileName has_any(MaliciousChromeExtensionID)
+| where isnotempty(SHA1)
