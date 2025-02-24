@@ -1,0 +1,4 @@
+#event_simpleName=ProcessRollup2 OR #event_simpleName=ProcessBlocked (FileName="AnyDesk.exe") OR (FileName="TeamViewer.exe") OR (FileName="TeamViewer_Service.exe") OR (FileName="AmmyAdmin.exe") OR (FileName="SRAgent.exe") OR (FileName="g2viewer.exe")
+(FileName="g2svc.exe") OR (FileName="vncviewer.exe") OR (FileName="tvnviewer.exe") OR (FileName="nxserver.exe") OR (FileName="nxnode.exe") (FileName="nxservice.exe") (FileName="radmin.exe") (FileName="rserver3.exe")
+| groupBy([@timestamp, ComputerName, FileName, FilePath CommandLine])
+| rename(FileName, as="Executable")
