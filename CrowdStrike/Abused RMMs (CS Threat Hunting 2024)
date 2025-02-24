@@ -1,3 +1,5 @@
+// Page 32 - https://www.securityweek.com/wp-content/uploads/2024/08/CrowdStrike-2024-Threat-Hunting-Report-.pdf //
+
 #event_simpleName=ProcessRollup2 OR #event_simpleName=ProcessBlocked (FileName="ScreenConnect.ClientService.exe") OR (FileName="ScreenConnect.WindowsClient.exe") OR (FileName="ScreenConnect.Service.exe") OR (FileName="ScreenConnect.WindowsService.exe") OR 
 (FileName="ScreenConnect.Host.exe") OR (FileName="ScreenConnect.Guest.exe") OR (FileName="AnyDesk.exe") OR (FileName="AnyDesk_Service.exe") OR (FileName="AnyDeskHelper.exe") OR (FileName="TeamViewer.exe") OR (FileName="TeamViewer_Service.exe") OR 
 (FileName="TeamViewer_Host.exe") OR (FileName="TeamViewerQS.exe") OR (FileName="TeamViewer_Desktop.exe") OR (FileName="AteraAgent.exe") OR (FileName="AteraClient.exe") OR (FileName="Splashtop.exe") OR (FileName="Splashtop-Streamer.exe") OR
