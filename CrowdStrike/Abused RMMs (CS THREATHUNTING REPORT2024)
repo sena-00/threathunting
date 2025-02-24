@@ -1,0 +1,8 @@
+#event_simpleName=ProcessRollup2 OR #event_simpleName=ProcessBlocked (FileName="ScreenConnect.ClientService.exe") OR (FileName="ScreenConnect.WindowsClient.exe") OR (FileName="ScreenConnect.Service.exe") OR (FileName="ScreenConnect.WindowsService.exe") OR 
+(FileName="ScreenConnect.Host.exe") OR (FileName="ScreenConnect.Guest.exe") OR (FileName="AnyDesk.exe") OR (FileName="AnyDesk_Service.exe") OR (FileName="AnyDeskHelper.exe") OR (FileName="TeamViewer.exe") OR (FileName="TeamViewer_Service.exe") OR 
+(FileName="TeamViewer_Host.exe") OR (FileName="TeamViewerQS.exe") OR (FileName="TeamViewer_Desktop.exe") OR (FileName="AteraAgent.exe") OR (FileName="AteraClient.exe") OR (FileName="Splashtop.exe") OR (FileName="Splashtop-Streamer.exe") OR
+(FileName="SplashtopRemoteService.exe") OR (FileName="SRManager.exe") OR (FileName="client32.exe") OR (FileName="PCICLIENT.exe") OR (FileName="NetSupportManager.exe") OR (FileName="PCIRemote.exe") OR (FileName="MeshAgent.exe") OR (FileName="MeshCentral.exe") OR 
+(FileName="RustDesk.exe") OR (FileName="RustDesk-Server.exe") OR (FileName="RustDesk-Service.exe") OR (FileName="RustDesk-Relay.exe") OR (FileName="QuickAssist.exe") OR (FileName="QuickAssist_Agent.exe") OR (FileName="FleetDeck.exe") OR (FileName="FleetDeckService.exe") OR 
+(FileName="FleetDeckHost.exe")
+| groupBy([@timestamp, ComputerName, FileName, FilePath CommandLine])
+| rename(FileName, as="Executable")
