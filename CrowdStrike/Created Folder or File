@@ -1,0 +1,2 @@
+#event_simpleName = "DirectoryCreate" | FileName = "XXXXXXX"
+| groupBy([@timestamp, ComputerName, TargetFileName])
