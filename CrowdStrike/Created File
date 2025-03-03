@@ -1,0 +1,2 @@
+#event_simpleName = "GenericFileWritten" | FileName = "XXXX.xx"
+| groupBy([@timestamp, ComputerName, TargetFileName])
