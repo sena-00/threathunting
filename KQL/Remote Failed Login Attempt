@@ -1,0 +1,9 @@
+| where TimeGenerated > ago (1d)
+| where LogonType == "RemoteInteractive"
+| where ActionType == "LogonFailed"
+| summarize
+    ['Count of logon attempts']=count(),
+    ['Count of distinct devices']=dcount(DeviceName),
+    ['List of devices']=make_set(DeviceName)
+    by RemoteIP, bin(TimeGenerated, 1h)
+| where ['Count of distinct devices'] >= 3 or ['Count of logon attempts'] >= 10
