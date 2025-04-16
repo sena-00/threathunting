@@ -1,0 +1,4 @@
+(#event_simpleName = * or #ecs.version = *) | (ComputerName = "XXXXXX")
+| groupBy([@timestamp, #event_simpleName, ComputerName, FileName, CommandLine, FilePath, TargetFileName])
+| rename(#event_simpleName, as="Event Name")
+| "Event Name" != EndOfProcess
