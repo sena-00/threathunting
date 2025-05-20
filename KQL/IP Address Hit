@@ -1,0 +1,4 @@
+DeviceNetworkEvents
+| where RemoteIP == "XXXXXXXX"
+| project Timestamp, DeviceName, InitiatingProcessAccountName, ActionType, RemoteIP, RemotePort
+| sort by Timestamp desc
