@@ -1,0 +1,4 @@
+IdentityLogonEvents
+| where TimeGenerated > ago(7d)
+| where AccountName has ("XXXXUSERNAMEXXXX") 
+| where FailureReason=="WrongPassword" or FailureReason=="AccountLocked"
