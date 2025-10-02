@@ -1,0 +1,3 @@
+(#event_simpleName = * or #ecs.version = *) | (#event_simpleName = "NetworkConnectIP4") and (RPort = "3389") | tail(1000)
+| groupBy([@timestamp, ComputerName, event_platform, LocalIP, RemoteAddressIP4])
+| rename(field="event_platform", as="OS") | rename(field="LocalIP", as="Source IP") | rename(field="RemoteAddressIP4", as="Dest IP")
