@@ -1,0 +1,5 @@
+DeviceNetworkEvents
+| where Timestamp > ago(30d)
+| where DeviceName == "XXXXXXXX"
+| where RemoteUrl has "home.test.com"
+| project Timestamp, InitiatingProcessFileName, DeviceName, ActionType, RemoteUrl, RemoteIP, InitiatingProcessCommandLine
