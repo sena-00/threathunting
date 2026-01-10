@@ -1,0 +1,1 @@
+Get-AzRoleAssignment | Where-Object {$_.RoleDefinitionName -eq "Owner"}
