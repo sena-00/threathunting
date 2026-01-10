@@ -1,1 +1,4 @@
 get-command *XXXXXX*
+
+## USAGE EXAMPLE = get-command *RoleAssign*
+## This lists all cmdlets that have roleassign to its name 
