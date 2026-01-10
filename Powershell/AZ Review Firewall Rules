@@ -1,0 +1,1 @@
+Get-AzNetworkSecurityGroup | ForEach-Object { $_.SecurityRules } | Where-Object { $_.Access -eq "Allow" -and $_.SourceAddressPrefix -eq "*" }
