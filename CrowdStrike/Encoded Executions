@@ -1,0 +1,3 @@
+#event_simpleName=ProcessRollup2 
+| CommandLine=/\-(e(nc|ncodedcommand|ncoded)?)\s+/iF
+| groupBy([ComputerName, event_platform], function=([count(CommandLine, distinct=true, as=uniqueCmdLines), count(aid, as=totalExecutions)]), limit=max)
