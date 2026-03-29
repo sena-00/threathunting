@@ -1,0 +1,6 @@
+groupBy([DomainName])
+| ioc:lookup(field=[DomainName], type="domain", confidenceThreshold=unverified, strict=true)
+| table([DomainName, "ioc[0].labels"])
+| "ioc[0].labels"=/wizard*/i
+
+## Replace wizard with any threat actor name desired ##
