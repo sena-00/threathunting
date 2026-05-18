@@ -10,7 +10,7 @@ A curated collection of production-ready threat hunting queries and automation s
 ## 📂 Repository Structure
 
 ```text
-├── .github/
+
 ├── CrowdStrike-CQL/           # Falcon Query Language hunts
 ├── Microsoft-KQL/             # Advanced Hunting & Sentinel queries
 └── PowerShell-Scripts/        # Endpoint triage and artifact collection
